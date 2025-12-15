@@ -23,8 +23,11 @@ const { title, header = true } = Astro.props;
 		<script>
 			const channel = new BroadcastChannel("solstice");
 
-			channel.onmessage = e => {
-				if ((e.data === "solstice" || e.data === "solstice-load") && !document.documentElement.classList.contains("solstice")) {
+			channel.onmessage = (e) => {
+				if (
+					(e.data === "solstice" || e.data === "solstice-load") &&
+					!document.documentElement.classList.contains("solstice")
+				) {
 					document.documentElement.classList.add("solstice");
 				} else if (e.data === "equinox") {
 					document.documentElement.classList.remove("solstice");
@@ -36,50 +39,78 @@ const { title, header = true } = Astro.props;
 					const physicalViewportWidth = window.innerWidth * zoom;
 					const physicalViewportHeight = window.innerHeight * zoom;
 
-					const viewportOffsetX = window.outerWidth - physicalViewportWidth;
-					const viewportOffsetY = window.outerHeight - physicalViewportHeight;
+					const viewportOffsetX =
+						window.outerWidth - physicalViewportWidth;
+					const viewportOffsetY =
+						window.outerHeight - physicalViewportHeight;
 
 					const corner = {
-						x: window.screenX + viewportOffsetX + physicalViewportWidth,
-						y: window.screenY + viewportOffsetY + physicalViewportHeight,
+						x:
+							window.screenX +
+							viewportOffsetX +
+							physicalViewportWidth,
+						y:
+							window.screenY +
+							viewportOffsetY +
+							physicalViewportHeight,
 					};
 
-					if (Math.abs(corner.x - e.data.x) < 10 && Math.abs(corner.y - e.data.y) < 10 && corner.y !== e.data.y && corner.x !== e.data.x) {
+					if (
+						Math.abs(corner.x - e.data.x) < 10 &&
+						Math.abs(corner.y - e.data.y) < 10 &&
+						corner.y !== e.data.y &&
+						corner.x !== e.data.x
+					) {
 						channel.postMessage("synchronized");
 					}
 				}
-			}
-			
+			};
+
 			channel.postMessage("load");
 		</script>
 	</head>
-	
+
 	<body>
 		<main>
-			{header && (
-				<Header
-					title="tropical's site"
-					items={[
-						{
-							name: "stuff",
-							path: "/",
-							external: false,
-						},
-						{
-							name: "archive",
-							path: "/archive",
-							external: false,
-						},
-						{
-							name: "projects",
-							path: "/projects",
-							external: false,
-						},
-					]}
-				/>
-			)}
+			{
+				header && (
+					<Header
+						title="tropical's site"
+						items={[
+							{
+								name: "stuff",
+								path: "/",
+								external: false,
+							},
+							{
+								name: "archive",
+								path: "/archive",
+								external: false,
+							},
+							{
+								name: "projects",
+								path: "/projects",
+								external: false,
+							},
+						]}
+					/>
+				)
+			}
 			<slot />
 		</main>
+		<div class="taskbar">
+			<a
+				class="start"
+				href="https://www.youtube.com/watch?v=oNXzMBA9VU4"
+				target="_blank"
+				rel="noreferrer noopener"
+				title="Click here to start"
+			>
+				<img src="/WindowsLogo-small.png" alt="Windows Logo" />
+				start
+			</a>
+			<time class="tray">2:00 PM</time>
+		</div>
 		<Clover />
 	</body>
 </html>
@@ -93,12 +124,37 @@ const { title, header = true } = Astro.props;
 </style>
 
 <style is:global>
+	@font-face {
+		font-family: "Web437 MBytePC230 8x16";
+		font-style: normal;
+		font-weight: 200;
+		src: url(/fonts/Web437_MBytePC230_8x16.woff) format("woff");
+	}
+
+	@font-face {
+		font-family: Web437 IBM Model3x Alt4;
+		font-style: normal;
+		font-weight: 400;
+		src: url(/fonts/Web437_IBM_Model3x_Alt4.woff) format("woff");
+	}
+
+	@font-face {
+		font-family: "Web437 DOS/V re. ANK24";
+		font-style: normal;
+		font-weight: 600;
+		src: url(/fonts/Web437_DOS-V_re_ANK24.woff) format("woff");
+	}
+
 	:root {
-		font-family: "MS UI Gothic", Tahoma;
+		font-family: var(--font-text);
 		color-scheme: dark;
 		font-smooth: never;
 		-webkit-font-smoothing: none;
-		
+
+		--font-small: "Web437 MBytePC230 8x16", Tahoma, sans-serif;
+		--font-text: "Web437 IBM Model3x Alt4", Tahoma, sans-serif;
+		--font-display: "Web437 DOS/V re. ANK24", Tahoma, sans-serif;
+
 		--background: #181c2d;
 		--scrollbar-background: #20253c;
 		--border: #868ca2;
@@ -112,28 +168,37 @@ const { title, header = true } = Astro.props;
 
 		--gradient-stop-1: oklch(78.41% 0.126 17.32);
 		--gradient-stop-2: oklch(82.6% 0.119 59.73);
-		--gradient: linear-gradient(135deg, var(--gradient-stop-1), var(--gradient-stop-2));
+		--gradient: linear-gradient(
+			135deg,
+			var(--gradient-stop-1),
+			var(--gradient-stop-2)
+		);
 	}
 
-	*, *::before, *::after {
+	*,
+	*::before,
+	*::after {
 		box-sizing: border-box;
 	}
 
 	html {
-		background: var(--background) url("/royale-downscaled.png") center/cover no-repeat;
+		background: var(--background) url("/royale-downscaled.png") center/cover
+			no-repeat;
 		image-rendering: pixelated;
 		scrollbar-color: var(--border) var(--scrollbar-background);
 		scrollbar-width: thin;
 	}
 
 	body {
+		position: relative;
 		min-height: 100vh;
 		margin: 0;
-		padding: 48px;
+		padding: 48px 48px 108px;
 	}
 
 	ul {
-		list-style-type: "✰   ";
+		padding-left: 2.5em;
+		list-style-type: "✰  ";
 	}
 
 	hr {
@@ -149,10 +214,11 @@ const { title, header = true } = Astro.props;
 	i::selection {
 		color: oklch(82.6% 0.119 59.73);
 	}
-	
+
 	h2 {
 		width: fit-content;
 		position: relative;
+		font-family: var(--font-display);
 		background: var(--gradient);
 		color: #000;
 		padding: 2px 8px;
@@ -161,7 +227,7 @@ const { title, header = true } = Astro.props;
 		margin-bottom: 16px;
 		margin-left: 16px;
 	}
-	
+
 	h2::before,
 	h2::after {
 		content: "";
@@ -179,12 +245,12 @@ const { title, header = true } = Astro.props;
 	h2::after {
 		left: -8px;
 	}
-	
+
 	a {
 		color: var(--link);
 		text-decoration-thickness: 1px;
 	}
-	
+
 	a:visited {
 		color: var(--link-visited);
 	}
@@ -203,7 +269,7 @@ const { title, header = true } = Astro.props;
 			padding: 24px;
 		}
 	}
-	
+
 	.solstice {
 		--background: #000;
 		--scrollbar-background: #000;
@@ -238,5 +304,65 @@ const { title, header = true } = Astro.props;
 
 	.solstice .clover {
 		display: block;
+	}
+
+	.taskbar {
+		height: 30px;
+		background: url(/TaskbarBackground.png) left / 100% 30px repeat-x;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
+		user-select: none;
+	}
+
+	.taskbar .start {
+		display: flex;
+		align-items: center;
+		width: 99px;
+		height: 30px;
+		background: url(/StartButton.png);
+		border: none;
+		color: #fff;
+		outline: none;
+		cursor: default;
+		text-decoration: none;
+		font-family:
+			Franklin Gothic Medium,
+			MS UI Gothic,
+			sans-serif;
+		font-style: italic;
+		font-size: 14pt;
+		text-shadow:
+			1px 2px 2px rgb(69, 76, 16),
+			0 0 3px rgb(69, 76, 16);
+		padding: 2px 24px 4px 10px;
+	}
+
+	.taskbar .start:hover {
+		background-position: 0 -33px;
+	}
+
+	.taskbar .start:active,
+	.taskbar .start:focus-visible {
+		background-position: 0 -66px;
+	}
+
+	.taskbar .tray {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background: url(/TaskbarTray.png) left / cover no-repeat;
+		height: 30px;
+		width: 66px;
+		font-family:
+			Tahoma,
+			MS UI Gothic,
+			sans-serif;
+		font-size: 8pt;
+		color: #fff;
 	}
 </style>

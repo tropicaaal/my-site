@@ -1,6 +1,6 @@
 ---
-import Section from '../components/Section.astro';
-import Layout from '../layouts/Layout.astro';
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
 
 const BUTTONS = [
 	"/88x31/riir.gif",
@@ -11,11 +11,11 @@ const BUTTONS = [
 	"/88x31/webarchive.gif",
 	"/88x31/ublock-now.png",
 	"/88x31/ds91.png",
+	"/88x31/gbbutton.gif",
 	"/88x31/css.png",
 	"/88x31/thirdimpact.png",
 	"/88x31/ieget-an.gif",
 	"/88x31/susie.png",
-	"/88x31/vscbutton.gif",
 	"/88x31/gimp.png",
 	"/88x31/ezgif.gif",
 ];
@@ -23,17 +23,26 @@ const BUTTONS = [
 
 <script>
 	let failed = false;
-	const stats = await fetch(`https://nekoweb.org/api/site/info/tropical`)
-		.then(res => res.json())
-		.catch(() => failed = true);
+	const stats = await fetch(
+		`https://nekoweb.org/api/site/info/tropical.nekoweb.org`,
+	)
+		.then((res) => res.json())
+		.catch(() => (failed = true));
 
 	if (!failed) {
-		document.getElementById("created")!.innerHTML = `<em>Created</em>: <time>${new Date(stats.created_at).toLocaleDateString()}</time>`;
-		document.getElementById("updated")!.innerHTML = `<em>Updated</em>: <time>${new Date(stats.updated_at).toLocaleDateString()}</time>`;
-		document.getElementById("views")!.innerHTML = `<em>Views</em>: ${stats.views}`;
-		document.getElementById("followers")!.innerHTML = `<em>Followers</em>: ${stats.followers}`;
+		document.getElementById("created")!.innerHTML =
+			`<em>Created</em>: <time>${new Date(stats.created_at).toLocaleDateString()}</time>`;
+		document.getElementById("updated")!.innerHTML =
+			`<em>Updated</em>: <time>${new Date(stats.updated_at).toLocaleDateString()}</time>`;
+		document.getElementById("views")!.innerHTML =
+			`<em>Views</em>: ${stats.views}`;
+		document.getElementById("followers")!.innerHTML =
+			`<em>Followers</em>: ${stats.followers}`;
 	} else {
-		document.getElementById("stats")!.querySelector(".section-contents")!.innerHTML = "Failed to fetch! 🐕";
+		document
+			.getElementById("stats")!
+			.querySelector(".section-contents")!.innerHTML =
+			"Failed to fetch! 🐕";
 	}
 </script>
 
@@ -42,69 +51,141 @@ const BUTTONS = [
 		<div class="left-column">
 			<Section tag="article" title="01. hello!!!!!">
 				<h2>welcome to my page!</h2>
-				Hey there, i'm Tropical (he/him). I poke at computer<i>s</i> for fun. Finally got around to redesigning my site, since the last <i>o</i>ne was pretty terrible and not mobile-friendly. If you're <i>l</i>ooking for that one, it's still on vercel <a href="https://tropix126.vercel.app/" target="_blank" rel="noreferrer noopener">here</a>.
-				<br />
-				<br />
-				I'm a hobbyst programmer with intere<i>s</i>ts in UI/UX design/accessibility, embedded stuff, fron<i>t</i>end webdev, reverse-engineering, competitive robotics, and music. I also like <i>i</i>ndie and rhythm games. You may have ran across me in a few corners of the internet.
-				Anyways, if any of that got your interest, you can <i>c</i>heck out my <a href="/projects">projects</a> page for a list of things i've made or help<i>e</i>d out with. Enjoy your stay! 🌴
+				hihi, I go by tropical online. I like to poke at computer<i>s</i
+				> for fun. My previous site kinda sucked and wasn't very m<i
+					>o</i
+				>bile-friendly, so I made this one instead! If you're <i>l</i
+				>ooking for the old one, it's still on vercel <a
+					href="https://tropix126.vercel.app/"
+					target="_blank"
+					rel="noreferrer noopener">here</a
+				>.
+				<strong
+					style="display: block; margin: 8px 0; opacity: 0.5; font-style: italic; font-weight: 600; font-family: var(--font-display); font-size: 16px;"
+				>
+					anyways.....
+					<br />
+				</strong>
+				I'm a hobbyist programmer (now student!) intere<i>s</i>ted in
+				UI/UX design/accessibility, embedded devices, fron<i>t</i>end
+				webdev, software reverse-engineering, competitive robotics, and
+				music. I like playing <i>i</i>ndie games and rhythm games and
+				practicing piano in my free time. You may have met me in a few
+				corners of the internet before. If any of that seems
+				interesting, you can <i>c</i>heck out my <a href="/projects"
+					>projects</a
+				> page for a list of things i've made or help<i>e</i>d with.
+				Enjoy your stay! 🌴
 			</Section>
 			<Section tag="article" title="03. programming">
-				<h2>nerd stuff</h2>
-				Here's some of the programming stuff I have some level of experience using:
+				<h2>stuff for nerds</h2>
+				here's a some of the languages and tech I like working with or have
+				some level of experience using for projects and whatnot:
 				<ul>
 					<li>Rust 🦀</li>
 					<li>C/C++</li>
+					<li>ARM32, MIPS Assembly</li>
 					<li>Typical web stack - HTML, (S)CSS, JS, etc...</li>
-					<li>TypeScript, Svelte, SolidJS, React(Native), Astro (like this site?), Node, whatever JS tooling isn't currently garbage right now (currently vite or esbuild or maybe bun)</li>
-					<li>Python (enough to write non-serious stuff)</li>
+					<li>
+						TypeScript, Svelte, SolidJS, React(Native), Astro (like
+						this site?), Node, whatever JS tooling isn't currently
+						garbage right now (currently vite or esbuild or maybe
+						bun)
+					</li>
+					<lfi>Python</li>
+					<li>Java (boooring)</li>
+					<li>Typst</li>
 				</ul>
-
-				Stuff I hope to learn eventually:
+				...and a non-exhaustive list of the things I hope to learn at some
+				point:
 				<ul>
-					<li>RISC-V or ARM Assembly (or maybe just any assembly in general)</li>
-					<li>Typst (notebooks don't have to be hell?)</li>
-					<li>Kotlin/Java (android dev seems cool)</li>
-					<li>Maybe Zig if it becomes more of a thing.</li>
+					<li>Kotlin</li>
+					<li>Swift</li>
+					<li>x86 Assembly</li>
 				</ul>
 			</Section>
 		</div>
 		<aside class="right-column">
 			<Section decorative id="buttons">
 				<marquee aria-hidden="true">
-					{BUTTONS.map(url => (
-						<img loading="lazy" src={url} width="88" height="31" />
-					))}
+					{
+						BUTTONS.map((url) => (
+							<img
+								loading="lazy"
+								src={url}
+								width="88"
+								height="31"
+							/>
+						))
+					}
 				</marquee>
 			</Section>
 			<Section decorative>
-				<img class="pipes" alt="Pipes" src="/pipes.svg" width="298" height="187" />
+				<img
+					class="pipes"
+					alt="Pipes"
+					src="/pipes.svg"
+					width="298"
+					height="187"
+				/>
 			</Section>
 			<Section id="socials" tag="article" title="02. go stalk me">
 				<ul>
 					<li>
-						<a href="https://github.com/tropix126/" target="_blank" rel="noreferrer noopener">GitHub - tropix126</a>
+						<a
+							href="https://github.com/tropicaaal/"
+							target="_blank"
+							rel="noreferrer noopener">GitHub - tropicaaal</a
+						>
 					</li>
 					<li>
-						<a href="https://twitter.com/tropix126" target="_blank" rel="noreferrer noopener">Twitter - @tropix126</a>
+						<a
+							href="https://twitter.com/tropix126"
+							target="_blank"
+							rel="noreferrer noopener">Twitter - @tropix126</a
+						>
 					</li>
 					<li>
-						<a href="https://reddit.com/u/tropix126" target="_blank" rel="noreferrer noopener">Reddit - u/tropix126</a>
+						<a
+							href="https://bsky.app/profile/did:plc:wabzp2nyfbapw743obf74mfv"
+							target="_blank"
+							rel="noreferrer noopener">Bluesky - @tropical.sh</a
+						>
 					</li>
 					<li>
-						<a href="https://discord.com/users/254362351170617345" target="_blank" rel="noreferrer noopener">Discord - @tropicaal</a>
+						<a
+							href="https://reddit.com/u/tropix126"
+							target="_blank"
+							rel="noreferrer noopener">Reddit - u/tropix126</a
+						>
 					</li>
 					<li>
-						<a href="https://twitch.tv/tropix126" target="_blank" rel="noreferrer noopener">Twitch - tropical126</a>
+						<a
+							href="https://discord.com/users/254362351170617345"
+							target="_blank"
+							rel="noreferrer noopener">Discord - @tropicaal</a
+						>
 					</li>
 					<li>
-						<a href="https://www.figma.com/@tropical" target="_blank" rel="noreferrer noopener">Figma - @tropical</a>
+						<a
+							href="https://twitch.tv/tropix126"
+							target="_blank"
+							rel="noreferrer noopener">Twitch - tropical126</a
+						>
 					</li>
 					<li>
-						<a href="https://osu.ppy.sh/users/tropica1" target="_blank" rel="noreferrer noopener">osu - tropica1</a>
+						<a
+							href="https://www.youtube.com/channel/UCYZDyX9Bk4CfroddX9-t9VA"
+							target="_blank"
+							rel="noreferrer noopener">YouTube - @Tropical126</a
+						>
 					</li>
 				</ul>
 			</Section>
 			<Section decorative id="music">
+				<a class="sepia" href="https://www.youtube.com/watch?v=-CLbvePFcN8" target="_blank" rel="noreferrer noopener">
+					<img alt="sepia" src="/sepia.gif" />
+				</a>
 				<div class="titlebar">
 					♪ take care of yourself
 					<div class="controls" aria-hidden="true">
@@ -129,6 +210,22 @@ const BUTTONS = [
 					<em>Followers: </em> Loading...
 				</div>
 			</Section>
+			<Section id="spinning-cat" decorative>
+				<a
+					href="https://cat.vexide.dev/"
+					title="maxwell"
+					target="_blank"
+					rel="noreferrer noopener"
+				>
+					<img
+						width="50"
+						height="33.5"
+						src="/cat-spinning.gif"
+						alt="cat spinning"
+					/>
+				</a>
+				<span>spin</span>
+			</Section>
 		</aside>
 	</div>
 </Layout>
@@ -150,7 +247,7 @@ const BUTTONS = [
 	}
 
 	section:last-child {
-		margin-bottom:0;
+		margin-bottom: 0;
 	}
 
 	section.decorative {
@@ -170,7 +267,12 @@ const BUTTONS = [
 		flex-direction: column;
 		background: silver;
 		border: none;
-		box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff, 4px 4px 0 var(--border);
+		box-shadow:
+			inset -1px -1px #0a0a0a,
+			inset 1px 1px #dfdfdf,
+			inset -2px -2px grey,
+			inset 2px 2px #fff,
+			4px 4px 0 var(--border);
 		padding: 2px;
 	}
 
@@ -192,13 +294,52 @@ const BUTTONS = [
 		flex-direction: column;
 	}
 
+	#spinning-cat {
+		flex: 1 1 auto;
+		overflow: hidden;
+	}
+
+	#spinning-cat :global(.section-contents) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 100%;
+		z-index: 1;
+	}
+
+	#spinning-cat img {
+		margin: 8px 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	#spinning-cat span {
+		user-select: none;
+		font-size: 64px;
+		font-family: var(--font-display);
+		font-style: italic;
+		opacity: 0.5;
+		position: absolute;
+	}
+
+	.sepia {
+		position: absolute;
+		right: 0px;
+		top: -50px;
+	}
+
 	.titlebar {
 		display: flex;
 		justify-content: space-between;
 		padding: 3px 2px 3px 3px;
-		background: linear-gradient(90deg, var(--gradient-stop-2), var(--gradient-stop-1));
+		background: linear-gradient(
+			90deg,
+			var(--gradient-stop-2),
+			var(--gradient-stop-1)
+		);
 		color: #000;
-		font-weight: bold;
+		font-family: var(--font-small);
 		font-size: 12px;
 		letter-spacing: 3px;
 	}
@@ -215,7 +356,11 @@ const BUTTONS = [
 		border: none;
 		border-radius: 0;
 		background-color: silver;
-		box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+		box-shadow:
+			inset -1px -1px #0a0a0a,
+			inset 1px 1px #fff,
+			inset -2px -2px grey,
+			inset 2px 2px #dfdfdf;
 	}
 
 	button.minimize {

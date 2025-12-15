@@ -1,0 +1,239 @@
+<html lang="en">
+	<head
+		><meta charset="UTF-8" /><meta
+			name="description"
+			content="if i could stay here forever i would"
+		/><meta name="viewport" content="width=device-width" /><meta
+			name="generator"
+			content="Astro v4.6.3"
+		/><title>details</title>
+		<script type="module">
+			const music = document.getElementById("music");
+			window.addEventListener("mousedown", () => {
+				music?.play();
+			});
+		</script></head
+	>
+	<body>
+		<audio id="music" loop="" autoplay="">
+			<source src="/abandoned_apartments.mp3" type="audio/mp3" />
+		</audio>
+		<i style="color: #151515 !important;">
+			if you're reading this, thank you
+		</i>
+		<div class="window">
+			<div class="titlebar">
+				IMG_01.png
+				<div class="controls" aria-hidden="true">
+					<button tabindex="-1" class="minimize"></button>
+					<button tabindex="-1" class="maximize"></button>
+					<button tabindex="-1" class="close"></button>
+				</div>
+			</div>
+			<img src="/IMG_01.png" width="240" height="180" />
+		</div>
+		<div class="window">
+			<div class="titlebar">
+				IMG_02.png
+				<div class="controls" aria-hidden="true">
+					<button tabindex="-1" class="minimize"></button>
+					<button tabindex="-1" class="maximize"></button>
+					<button tabindex="-1" class="close"></button>
+				</div>
+			</div>
+			<img src="/IMG_02.png" width="200" height="266" />
+		</div>
+		<div class="window">
+			<div class="titlebar">
+				IMG_03.png
+				<div class="controls" aria-hidden="true">
+					<button tabindex="-1" class="minimize"></button>
+					<button tabindex="-1" class="maximize"></button>
+					<button tabindex="-1" class="close"></button>
+				</div>
+			</div>
+			<img src="/IMG_03.png" width="190" height="129" />
+		</div>
+		<div class="window">
+			<div class="titlebar">
+				IMG_04.png
+				<div class="controls" aria-hidden="true">
+					<button tabindex="-1" class="minimize"></button>
+					<button tabindex="-1" class="maximize"></button>
+					<button tabindex="-1" class="close"></button>
+				</div>
+			</div>
+			<img src="/IMG_04.png" width="210" height="158" />
+		</div>
+		<div class="window">
+			<div class="titlebar">
+				IMG_05.png
+				<div class="controls" aria-hidden="true">
+					<button tabindex="-1" class="minimize"></button>
+					<button tabindex="-1" class="maximize"></button>
+					<button tabindex="-1" class="close"></button>
+				</div>
+			</div>
+			<img src="/IMG_05.png" width="160" height="435" />
+		</div>
+	</body>
+</html>
+
+<style>
+	html {
+		overflow-y: scroll;
+		scrollbar-color: #000 #000;
+		scrollbar-width: thin;
+		font-family:
+			MS UI Gothic,
+			Tahoma,
+			sans-serif;
+		background: url(/hands.png) center/cover no-repeat;
+		color-scheme: dark;
+		image-rendering: pixelated;
+	}
+	@keyframes scan {
+		0% {
+			background-position: 0%;
+		}
+		to {
+			background-position: 0 16px;
+		}
+	}
+	html:after {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: repeating-linear-gradient(
+			to bottom,
+			#00000080,
+			#00e5ff7f 1px,
+			#ff0f0f26 2px,
+			#00000026 4px
+		);
+		animation: scan 2s steps(16) infinite;
+		z-index: 1;
+		mix-blend-mode: overlay;
+		pointer-events: none;
+	}
+	body {
+		margin: 0;
+		height: 100vh;
+		min-height: 600px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	::selection {
+		background-color: gray;
+	}
+	i {
+		user-select: text;
+		position: absolute;
+		margin-left: -640px;
+		margin-top: -100px;
+		font-size: 12px;
+	}
+	.window {
+		position: absolute;
+		background: silver;
+		box-shadow:
+			0 8px 16px 8px #00000080,
+			inset -1px -1px #0a0a0a,
+			inset 1px 1px #dfdfdf,
+			inset -2px -2px gray,
+			inset 2px 2px #fff;
+		padding: 3px;
+		mix-blend-mode: screen;
+		z-index: 1;
+	}
+	.window img {
+		display: block;
+	}
+	.window:nth-of-type(2) {
+		margin-top: 300px;
+		margin-left: 400px;
+	}
+	.window:nth-of-type(3) {
+		margin-top: 200px;
+		margin-left: -550px;
+	}
+	.window:nth-of-type(4) {
+		z-index: 0;
+		margin-top: -300px;
+		margin-left: 200px;
+	}
+	.window:nth-of-type(5) {
+		z-index: 0;
+		margin-left: -250px;
+	}
+	.titlebar {
+		display: flex;
+		justify-content: space-between;
+		padding: 3px 2px 3px 3px;
+		background: repeating-linear-gradient(
+			to bottom,
+			#8f8f8f,
+			#8f8f8f 2px,
+			#a6a6a6 2px 4px
+		);
+		color: #000;
+		font-weight: 700;
+		font-size: 12px;
+	}
+	.titlebar .controls {
+		display: flex;
+	}
+	.titlebar .controls button {
+		display: block;
+		min-height: 14px;
+		min-width: 16px;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		background-color: silver;
+		box-shadow:
+			inset -1px -1px #0a0a0a,
+			inset 1px 1px #fff,
+			inset -2px -2px gray,
+			inset 2px 2px #dfdfdf;
+	}
+	button.minimize {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
+		background-position: bottom 4px left 4px;
+		background-repeat: no-repeat;
+	}
+	button.maximize {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
+		background-position: top 3px left 3px;
+		background-repeat: no-repeat;
+	}
+	button.close {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+		background-position: top 4px left 4px;
+		background-repeat: no-repeat;
+		margin-left: 2px;
+	}
+	@media only screen and (max-width: 768px) {
+		.window {
+			margin: 0 !important;
+			position: relative !important;
+		}
+		i {
+			margin-left: 0;
+			margin-top: -30px;
+		}
+		body {
+			gap: 24px;
+			padding: 48px !important;
+			overflow: visible;
+			justify-content: flex-start;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+</style>

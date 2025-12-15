@@ -1,38 +1,61 @@
 ---
-const {
-	title = "",
-	items = [],
-} = Astro.props as Props;
+const { title = "", items = [] } = Astro.props as Props;
 
 interface NavigationItem {
-	name: string,
-	path: string,
-	external?: boolean
+	name: string;
+	path: string;
+	external?: boolean;
 }
 
 interface Props {
-	title: string,
-	items?: NavigationItem[]
+	title: string;
+	items?: NavigationItem[];
 }
 ---
 
 <header>
 	<a class="skip-to-content" href="#content">Skip to Content</a>
 	<div class="header-image">
-		<img width="923" height="200" alt="Header image" src="/nhmf.png" />
+		<img
+			class="nhmf"
+			width="923"
+			height="200"
+			alt="an important sunset"
+			src="/nhmf.png"
+		/>
 		<h1>{title}</h1>
+		<a class="lightpost-container" href="/july/">
+			<img
+				class="light"
+				src="/lightsource.png"
+				width="139"
+				height="175"
+				alt="light source"
+			/>
+			<img
+				class="lightpost"
+				width="13"
+				height="65"
+				alt="Lightpost"
+				src="/lightpost.png"
+			/>
+		</a>
 	</div>
 	<nav>
-		{items.map(item => (
-			<a
-				href={item.path}
-				rel={item.external ? "noreferrer noopener" : null}
-				target={item.external ? "_blank" : null}
-			>
-				{new URL(Astro.request.url).pathname == item.path ? "> " : ""}
-				{item.name}
-			</a>
-		))}
+		{
+			items.map((item) => (
+				<a
+					href={item.path}
+					rel={item.external ? "noreferrer noopener" : null}
+					target={item.external ? "_blank" : null}
+				>
+					{new URL(Astro.request.url).pathname == item.path
+						? "> "
+						: ""}
+					{item.name}
+				</a>
+			))
+		}
 	</nav>
 </header>
 
@@ -46,6 +69,7 @@ interface Props {
 		padding: 3px 9px;
 		padding-right: 4px;
 		background: var(--border);
+		font-family: var(--font-small);
 		color: #000;
 	}
 
@@ -67,12 +91,14 @@ interface Props {
 		image-rendering: pixelated;
 		position: relative;
 		height: 200px;
+		overflow: hidden;
 	}
 
-	.header-image img {
+	.nhmf {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: center 70%;
 	}
 
 	header {
@@ -81,17 +107,18 @@ interface Props {
 		border: 1px solid var(--border);
 		box-shadow: 4px 4px 0 var(--border);
 	}
-	
+
 	header h1 {
 		position: absolute;
 		bottom: 24px;
 		left: 24px;
+		font-family: var(--font-display);
 		background: var(--gradient);
 		box-shadow: 4px 4px 0 var(--border);
 		color: #000;
 		margin: 0;
 		padding: 8px 16px;
-		font-size: 17px;
+		font-size: 16px;
 	}
 
 	nav {
@@ -102,13 +129,14 @@ interface Props {
 	nav a {
 		display: inline-block;
 		padding: 12px 24px;
+		font-family: var(--font-small);
 		border-right: 1px solid var(--border);
 		color: var(--foreground);
-		font-size: 10px;
+		font-size: 12px;
 		text-transform: uppercase;
 		text-decoration: none;
 	}
-	
+
 	nav a:hover {
 		text-decoration: underline;
 		text-decoration-thickness: 1px;
@@ -118,4 +146,24 @@ interface Props {
 		outline: 1px dotted;
 		outline-offset: -5px;
 	}
+
+
+.lightpost-container {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center
+}
+
+.lightpost-container .light {
+    position: absolute;
+    margin-left: -3px;
+    top: -32px;
+    width: 139px;
+    height: 175px;
+    border-radius: 0;
+    z-index: -1
+}
 </style>
