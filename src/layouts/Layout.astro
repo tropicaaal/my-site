@@ -283,6 +283,8 @@ const { title, header = true } = Astro.props;
 		--gradient-stop-1: green;
 		--gradient-stop-2: green;
 
+		--highlight: rgba(0, 128, 0, 0.25);
+
 		background: var(--background);
 	}
 
@@ -295,7 +297,8 @@ const { title, header = true } = Astro.props;
 	}
 
 	.solstice .header-image img {
-		display: none;
+		mix-blend-mode: hard-light;
+		filter: grayscale(1);
 	}
 
 	.clover {
@@ -308,7 +311,7 @@ const { title, header = true } = Astro.props;
 
 	.taskbar {
 		height: 30px;
-		background: url(/TaskbarBackground.png) left / 100% 30px repeat-x;
+		background: var(--border) url(/TaskbarBackground.png) left / 100% 30px repeat-x;
 		width: 100%;
 		position: absolute;
 		bottom: 0;
@@ -364,5 +367,14 @@ const { title, header = true } = Astro.props;
 			sans-serif;
 		font-size: 8pt;
 		color: #fff;
+	}
+
+	.solstice .taskbar {
+		background-blend-mode: darken;
+	}
+
+	.solstice .start,
+	.solstice .tray {
+		mix-blend-mode: overlay;
 	}
 </style>
