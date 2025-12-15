@@ -7,8 +7,8 @@
 			name="generator"
 			content="Astro v4.6.3"
 		/><title>details</title>
-		<script type="module">
-			const music = document.getElementById("music");
+		<script>
+			const music = document.getElementById("music") as HTMLMediaElement;
 			window.addEventListener("mousedown", () => {
 				music?.play();
 			});
