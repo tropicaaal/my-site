@@ -68,6 +68,18 @@ const { title, header = true } = Astro.props;
 
 			channel.postMessage("load");
 		</script>
+
+		<script>
+			const clock = document.querySelector("time.tray") as HTMLTimeElement;
+			const formatter = new Intl.DateTimeFormat(undefined, {
+				hour: "numeric",
+				minute: "2-digit"
+			});
+
+			setInterval(() => {
+				clock.textContent = formatter.format(new Date());
+			}, 1000);
+		</script>
 	</head>
 
 	<body>
@@ -109,7 +121,7 @@ const { title, header = true } = Astro.props;
 				<img src="/WindowsLogo-small.png" alt="Windows Logo" />
 				start
 			</a>
-			<time class="tray">2:00 PM</time>
+			<time class="tray">11:00 PM</time>
 		</div>
 		<Clover />
 	</body>
@@ -266,7 +278,17 @@ const { title, header = true } = Astro.props;
 
 	@media only screen and (max-width: 1024px) {
 		body {
-			padding: 24px;
+			padding: 28px 12px 48px;
+		}
+	}
+	
+	@media only screen and (max-width: 768px) {
+		nav {
+			display: flex;
+		}
+	
+		nav a {
+			flex: 1 1 auto;
 		}
 	}
 
