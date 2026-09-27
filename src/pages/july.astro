@@ -6,7 +6,7 @@
 		/><meta name="viewport" content="width=device-width" /><meta
 			name="generator"
 			content="Astro v4.6.3"
-		/><title>details</title>
+		/><title>DONT YOU RECOGNIZE YOURSELF?</title>
 		<script>
 			const music = document.getElementById("music") as HTMLMediaElement;
 			window.addEventListener("mousedown", () => {
@@ -16,7 +16,7 @@
 	>
 	<body>
 		<audio id="music" loop="" autoplay="">
-			<source src="/abandoned_apartments.mp3" type="audio/mp3" />
+			<source src="/audio/abandoned_apartments.mp3" type="audio/mp3" />
 		</audio>
 		<i style="color: #151515 !important;">
 			if you're reading this, thank you
@@ -80,17 +80,25 @@
 </html>
 
 <style>
+	@font-face {
+		font-family: "Web437 DOS/V re. ANK24";
+		font-style: normal;
+		font-weight: 600;
+		src: url(/fonts/Web437_DOS-V_re_ANK24.woff) format("woff");
+	}
+
 	html {
-		overflow-y: scroll;
+		position: relative;
 		scrollbar-color: #000 #000;
 		scrollbar-width: thin;
-		font-family:
-			MS UI Gothic,
-			Tahoma,
-			sans-serif;
+		font-family: "Web437 DOS/V re. ANK24";
 		background: url(/hands.png) center/cover no-repeat;
 		color-scheme: dark;
 		image-rendering: pixelated;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	@keyframes scan {
 		0% {
@@ -100,34 +108,51 @@
 			background-position: 0 16px;
 		}
 	}
+
 	html:after {
-		content: "";
+		content: " ";
+		display: block;
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
-		background: repeating-linear-gradient(
-			to bottom,
-			#00000080,
-			#00e5ff7f 1px,
-			#ff0f0f26 2px,
-			#00000026 4px
-		);
-		animation: scan 2s steps(16) infinite;
-		z-index: 1;
-		mix-blend-mode: overlay;
+		bottom: 0;
+		right: 0;
+		background:
+			linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+			linear-gradient(
+				90deg,
+				rgba(255, 0, 0, 0.06),
+				rgba(0, 255, 0, 0.02),
+				rgba(0, 0, 255, 0.06)
+			);
+		z-index: 100;
+		background-size:
+			100% 2px,
+			3px 100%;
 		pointer-events: none;
+		animation: scan 2s steps(16) infinite;
 	}
 	body {
 		margin: 0;
-		height: 100vh;
 		min-height: 600px;
-		overflow: hidden;
+		overflow: visible;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
+	html::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		position: absolute;
+		filter: invert(1);
+		background: url(/mothPrint.jpg);
+		mix-blend-mode: overlay;
+		z-index: 100;
+		opacity: 0.5;
+	}
+
 	::selection {
 		background-color: gray;
 	}
@@ -230,9 +255,6 @@
 		body {
 			gap: 24px;
 			padding: 48px !important;
-			overflow: visible;
-			justify-content: flex-start;
-			display: flex;
 			flex-direction: column;
 		}
 	}

@@ -1,60 +1,384 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="tropical's site.">
-    <div class="projects">
-        <a href="https://vexide.dev/" target="_blank" rel="noreferrer noopener" class="project wide tall vexide">
-			<svg xmlns="http://www.w3.org/2000/svg" width="665" height="345" viewBox="0 0 665 345" fill="none">
-				<path d="M533.208 0H652.059C662.745 0 668.101 12.9171 660.55 20.4792L531.926 149.288C527.248 153.973 527.248 161.561 531.926 166.246L660.55 295.055C668.101 302.617 662.745 315.534 652.059 315.534H533.208C530.023 315.534 526.968 314.268 524.717 312.013L455.567 242.764C450.879 238.069 443.272 238.069 438.584 242.764L340.991 340.496C336.304 345.191 328.696 345.191 324.009 340.496L4.44986 20.4792C-3.10137 12.9171 2.25452 0 12.9412 0H131.792C134.977 0 138.032 1.26666 140.283 3.52082L324.009 187.51C328.696 192.205 336.304 192.205 340.991 187.51L447.075 81.274L524.717 3.52081C526.968 1.26665 530.023 0 533.208 0Z" fill="#e6c85c"/>
-				<path d="M237.573 20.324L324.131 110.206C328.785 115.038 336.496 115.117 341.247 110.381L400.475 51.3386C405.179 46.6493 405.179 39.0307 400.475 34.3414L369.537 3.50138C367.288 1.2591 364.242 0 361.065 0H246.216C235.634 0 230.232 12.7016 237.573 20.324Z" fill="#D8DBE9"/>
+	<div class="projects">
+		<a
+			href="https://vexide.dev/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project wide tall vexide"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="665"
+				height="345"
+				viewBox="0 0 665 345"
+				fill="none"
+			>
+				<path
+					d="M533.208 0H652.059C662.745 0 668.101 12.9171 660.55 20.4792L531.926 149.288C527.248 153.973 527.248 161.561 531.926 166.246L660.55 295.055C668.101 302.617 662.745 315.534 652.059 315.534H533.208C530.023 315.534 526.968 314.268 524.717 312.013L455.567 242.764C450.879 238.069 443.272 238.069 438.584 242.764L340.991 340.496C336.304 345.191 328.696 345.191 324.009 340.496L4.44986 20.4792C-3.10137 12.9171 2.25452 0 12.9412 0H131.792C134.977 0 138.032 1.26666 140.283 3.52082L324.009 187.51C328.696 192.205 336.304 192.205 340.991 187.51L447.075 81.274L524.717 3.52081C526.968 1.26665 530.023 0 533.208 0Z"
+					fill="#e6c85c"></path>
+				<path
+					d="M237.573 20.324L324.131 110.206C328.785 115.038 336.496 115.117 341.247 110.381L400.475 51.3386C405.179 46.6493 405.179 39.0307 400.475 34.3414L369.537 3.50138C367.288 1.2591 364.242 0 361.065 0H246.216C235.634 0 230.232 12.7016 237.573 20.324Z"
+					fill="#D8DBE9"></path>
 			</svg>
 			<h1>vexide</h1>
 		</a>
-		<a href="https://fluent-svelte.vercel.app/" target="_blank" rel="noreferrer noopener" class="project wide fluent-svelte">
-			<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 453">
+		<a
+			href="https://fluent-svelte.vercel.app/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project wide fluent-svelte"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="480"
+				height="480"
+				viewBox="0 0 480 453"
+			>
 				<defs>
 					<linearGradient id="shadow" gradientTransform="rotate(30)">
-						<stop offset="5%" stop-color="#014fd5"/><stop offset="95%" stop-color="#2e7cfe"/>
+						<stop offset="5%" stop-color="#014fd5"></stop><stop
+							offset="95%"
+							stop-color="#2e7cfe"></stop>
 					</linearGradient>
 				</defs>
-				<path fill="#c00172" d="M164.449,91.604c0,-0 -64.968,37.264 -112.03,64.258c-9.797,5.619 -15.84,16.051 -15.84,27.346c0,11.294 6.043,21.726 15.84,27.346c45.54,26.12 107.287,61.537 107.287,61.537l159.707,-91.604l-154.964,-88.883Z"/>
-				<path fill="#fe2e96" d="M339.841,8.997c-9.715,-5.572 -21.656,-5.572 -31.37,-0c-40.245,23.083 -144.022,82.607 -144.022,82.607l154.964,88.883c-0,0 64.968,-37.264 112.03,-64.257c9.797,-5.62 15.84,-16.052 15.84,-27.347c-0,-11.294 -6.043,-21.726 -15.84,-27.346c-31.322,-17.965 -70.31,-40.328 -91.602,-52.54Z"/>
-				<path fill="#2e7cfe" d="M319.413,180.487l-159.707,91.604l154.964,88.884c-0,-0 64.968,-37.265 112.03,-64.258c9.797,-5.62 15.84,-16.052 15.84,-27.346c-0,-11.295 -6.043,-21.727 -15.84,-27.346c-45.54,-26.121 -107.287,-61.538 -107.287,-61.538Z"/>
-				<path fill="#3b2efe" d="M159.706,272.091c0,0 -64.968,37.264 -112.03,64.258c-9.797,5.619 -15.84,16.051 -15.84,27.346c0,11.295 6.043,21.726 15.84,27.346c31.322,17.965 70.31,40.328 91.602,52.541c9.715,5.572 21.656,5.572 31.371,-0c40.244,-23.084 144.021,-82.607 144.021,-82.607l-154.964,-88.884Z"/>
+				<path
+					fill="#c00172"
+					d="M164.449,91.604c0,-0 -64.968,37.264 -112.03,64.258c-9.797,5.619 -15.84,16.051 -15.84,27.346c0,11.294 6.043,21.726 15.84,27.346c45.54,26.12 107.287,61.537 107.287,61.537l159.707,-91.604l-154.964,-88.883Z"
+				></path>
+				<path
+					fill="#fe2e96"
+					d="M339.841,8.997c-9.715,-5.572 -21.656,-5.572 -31.37,-0c-40.245,23.083 -144.022,82.607 -144.022,82.607l154.964,88.883c-0,0 64.968,-37.264 112.03,-64.257c9.797,-5.62 15.84,-16.052 15.84,-27.347c-0,-11.294 -6.043,-21.726 -15.84,-27.346c-31.322,-17.965 -70.31,-40.328 -91.602,-52.54Z"
+				></path>
+				<path
+					fill="#2e7cfe"
+					d="M319.413,180.487l-159.707,91.604l154.964,88.884c-0,-0 64.968,-37.265 112.03,-64.258c9.797,-5.62 15.84,-16.052 15.84,-27.346c-0,-11.295 -6.043,-21.727 -15.84,-27.346c-45.54,-26.121 -107.287,-61.538 -107.287,-61.538Z"
+				></path>
+				<path
+					fill="#3b2efe"
+					d="M159.706,272.091c0,0 -64.968,37.264 -112.03,64.258c-9.797,5.619 -15.84,16.051 -15.84,27.346c0,11.295 6.043,21.726 15.84,27.346c31.322,17.965 70.31,40.328 91.602,52.541c9.715,5.572 21.656,5.572 31.371,-0c40.244,-23.084 144.021,-82.607 144.021,-82.607l-154.964,-88.884Z"
+				></path>
 			</svg>
 			<h1>fluent-svelte</h1>
 		</a>
-		<a href="https://files.community/" target="_blank" rel="noreferrer noopener" class="project files">
-			<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256"><mask id="mask0_2979_11318" style="mask-type:luminance" width="256" height="224" x="0" y="16" maskUnits="userSpaceOnUse"><path fill="#fff" d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L123.314 43.3137C126.314 46.3143 130.384 48 134.627 48H232C245.255 48 256 58.7452 256 72V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"/></mask><g mask="url(#mask0_2979_11318)"><path fill="url(#paint0_linear_2979_11318)" d="M0 72C0 58.7452 10.7452 48 24 48H232C245.255 48 256 58.7452 256 72V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V72Z"/><mask id="mask1_2979_11318" style="mask-type:luminance" width="256" height="192" x="0" y="48" maskUnits="userSpaceOnUse"><path fill="#fff" d="M0 72C0 58.7452 10.7452 48 24 48H232C245.255 48 256 58.7452 256 72V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V72Z"/></mask><g mask="url(#mask1_2979_11318)"><g filter="url(#filter0_f_2979_11318)"><path fill="#000" fill-opacity=".24" d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"/></g><g filter="url(#filter1_f_2979_11318)"><path fill="#000" fill-opacity=".32" d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"/></g></g><path fill="url(#paint1_linear_2979_11318)" d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"/><mask id="mask2_2979_11318" style="mask-type:luminance" width="256" height="224" x="0" y="16" maskUnits="userSpaceOnUse"><path fill="#fff" d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"/></mask><g mask="url(#mask2_2979_11318)"><g filter="url(#filter2_f_2979_11318)"><path fill="#000" fill-opacity=".24" d="M15.0294 128.971C24.402 119.598 39.598 119.598 48.9706 128.971L160 240H24C10.7452 240 0 229.255 0 216V144L15.0294 128.971Z"/></g><g filter="url(#filter3_f_2979_11318)"><path fill="#000" fill-opacity=".32" d="M15.0294 128.971C24.402 119.598 39.598 119.598 48.9706 128.971L160 240H24C10.7452 240 0 229.255 0 216V144L15.0294 128.971Z"/></g></g><path fill="url(#paint2_linear_2979_11318)" d="M15.0294 128.971C24.402 119.598 39.598 119.598 48.9706 128.971L160 240H24C10.7452 240 0 229.255 0 216V144L15.0294 128.971Z"/></g><defs><filter id="filter0_f_2979_11318" width="264" height="232" x="-4" y="12" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2979_11318" stdDeviation="2"/></filter><filter id="filter1_f_2979_11318" width="288" height="256" x="-16" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2979_11318" stdDeviation="8"/></filter><filter id="filter2_f_2979_11318" width="168" height="126.059" x="-4" y="117.941" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2979_11318" stdDeviation="2"/></filter><filter id="filter3_f_2979_11318" width="192" height="150.059" x="-16" y="105.941" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2979_11318" stdDeviation="8"/></filter><linearGradient id="paint0_linear_2979_11318" x1="54.125" x2="201.75" y1="0" y2="255.75" gradientUnits="userSpaceOnUse"><stop offset=".325" stop-color="#D57D01"/><stop offset=".843" stop-color="#AB5D01"/></linearGradient><linearGradient id="paint1_linear_2979_11318" x1="54.25" x2="201.875" y1=".25" y2="255.875" gradientUnits="userSpaceOnUse"><stop stop-color="#FAC240"/><stop offset=".936" stop-color="#F9AE00"/></linearGradient><linearGradient id="paint2_linear_2979_11318" x1="54.25" x2="201.875" y1=".25" y2="255.875" gradientUnits="userSpaceOnUse"><stop offset=".552" stop-color="#FFDA55"/><stop offset=".932" stop-color="#FAC240"/></linearGradient></defs></svg>
+		<a
+			href="https://files.community/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project files"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="256"
+				height="256"
+				fill="none"
+				viewBox="0 0 256 256"
+				><mask
+					id="mask0_2979_11318"
+					style="mask-type:luminance"
+					width="256"
+					height="224"
+					x="0"
+					y="16"
+					maskUnits="userSpaceOnUse"
+					><path
+						fill="#fff"
+						d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L123.314 43.3137C126.314 46.3143 130.384 48 134.627 48H232C245.255 48 256 58.7452 256 72V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"
+					></path></mask
+				><g mask="url(#mask0_2979_11318)"
+					><path
+						fill="url(#paint0_linear_2979_11318)"
+						d="M0 72C0 58.7452 10.7452 48 24 48H232C245.255 48 256 58.7452 256 72V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V72Z"
+					></path><mask
+						id="mask1_2979_11318"
+						style="mask-type:luminance"
+						width="256"
+						height="192"
+						x="0"
+						y="48"
+						maskUnits="userSpaceOnUse"
+						><path
+							fill="#fff"
+							d="M0 72C0 58.7452 10.7452 48 24 48H232C245.255 48 256 58.7452 256 72V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V72Z"
+						></path></mask
+					><g mask="url(#mask1_2979_11318)"
+						><g filter="url(#filter0_f_2979_11318)"
+							><path
+								fill="#000"
+								fill-opacity=".24"
+								d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"
+							></path></g
+						><g filter="url(#filter1_f_2979_11318)"
+							><path
+								fill="#000"
+								fill-opacity=".32"
+								d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"
+							></path></g
+						></g
+					><path
+						fill="url(#paint1_linear_2979_11318)"
+						d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"
+					></path><mask
+						id="mask2_2979_11318"
+						style="mask-type:luminance"
+						width="256"
+						height="224"
+						x="0"
+						y="16"
+						maskUnits="userSpaceOnUse"
+						><path
+							fill="#fff"
+							d="M0 40C0 26.7452 10.7452 16 24 16H82.7452C91.2321 16 99.3714 19.3714 105.373 25.3726L251.314 171.314C254.314 174.314 256 178.384 256 182.627V216C256 229.255 245.255 240 232 240H24C10.7452 240 0 229.255 0 216V40Z"
+						></path></mask
+					><g mask="url(#mask2_2979_11318)"
+						><g filter="url(#filter2_f_2979_11318)"
+							><path
+								fill="#000"
+								fill-opacity=".24"
+								d="M15.0294 128.971C24.402 119.598 39.598 119.598 48.9706 128.971L160 240H24C10.7452 240 0 229.255 0 216V144L15.0294 128.971Z"
+							></path></g
+						><g filter="url(#filter3_f_2979_11318)"
+							><path
+								fill="#000"
+								fill-opacity=".32"
+								d="M15.0294 128.971C24.402 119.598 39.598 119.598 48.9706 128.971L160 240H24C10.7452 240 0 229.255 0 216V144L15.0294 128.971Z"
+							></path></g
+						></g
+					><path
+						fill="url(#paint2_linear_2979_11318)"
+						d="M15.0294 128.971C24.402 119.598 39.598 119.598 48.9706 128.971L160 240H24C10.7452 240 0 229.255 0 216V144L15.0294 128.971Z"
+					></path></g
+				><defs
+					><filter
+						id="filter0_f_2979_11318"
+						width="264"
+						height="232"
+						x="-4"
+						y="12"
+						color-interpolation-filters="sRGB"
+						filterUnits="userSpaceOnUse"
+						><feFlood flood-opacity="0" result="BackgroundImageFix"
+						></feFlood><feBlend
+							in="SourceGraphic"
+							in2="BackgroundImageFix"
+							mode="normal"
+							result="shape"></feBlend><feGaussianBlur
+							result="effect1_foregroundBlur_2979_11318"
+							stdDeviation="2"></feGaussianBlur></filter
+					><filter
+						id="filter1_f_2979_11318"
+						width="288"
+						height="256"
+						x="-16"
+						y="0"
+						color-interpolation-filters="sRGB"
+						filterUnits="userSpaceOnUse"
+						><feFlood flood-opacity="0" result="BackgroundImageFix"
+						></feFlood><feBlend
+							in="SourceGraphic"
+							in2="BackgroundImageFix"
+							mode="normal"
+							result="shape"></feBlend><feGaussianBlur
+							result="effect1_foregroundBlur_2979_11318"
+							stdDeviation="8"></feGaussianBlur></filter
+					><filter
+						id="filter2_f_2979_11318"
+						width="168"
+						height="126.059"
+						x="-4"
+						y="117.941"
+						color-interpolation-filters="sRGB"
+						filterUnits="userSpaceOnUse"
+						><feFlood flood-opacity="0" result="BackgroundImageFix"
+						></feFlood><feBlend
+							in="SourceGraphic"
+							in2="BackgroundImageFix"
+							mode="normal"
+							result="shape"></feBlend><feGaussianBlur
+							result="effect1_foregroundBlur_2979_11318"
+							stdDeviation="2"></feGaussianBlur></filter
+					><filter
+						id="filter3_f_2979_11318"
+						width="192"
+						height="150.059"
+						x="-16"
+						y="105.941"
+						color-interpolation-filters="sRGB"
+						filterUnits="userSpaceOnUse"
+						><feFlood flood-opacity="0" result="BackgroundImageFix"
+						></feFlood><feBlend
+							in="SourceGraphic"
+							in2="BackgroundImageFix"
+							mode="normal"
+							result="shape"></feBlend><feGaussianBlur
+							result="effect1_foregroundBlur_2979_11318"
+							stdDeviation="8"></feGaussianBlur></filter
+					><linearGradient
+						id="paint0_linear_2979_11318"
+						x1="54.125"
+						x2="201.75"
+						y1="0"
+						y2="255.75"
+						gradientUnits="userSpaceOnUse"
+						><stop offset=".325" stop-color="#D57D01"></stop><stop
+							offset=".843"
+							stop-color="#AB5D01"></stop></linearGradient
+					><linearGradient
+						id="paint1_linear_2979_11318"
+						x1="54.25"
+						x2="201.875"
+						y1=".25"
+						y2="255.875"
+						gradientUnits="userSpaceOnUse"
+						><stop stop-color="#FAC240"></stop><stop
+							offset=".936"
+							stop-color="#F9AE00"></stop></linearGradient
+					><linearGradient
+						id="paint2_linear_2979_11318"
+						x1="54.25"
+						x2="201.875"
+						y1=".25"
+						y2="255.875"
+						gradientUnits="userSpaceOnUse"
+						><stop offset=".552" stop-color="#FFDA55"></stop><stop
+							offset=".932"
+							stop-color="#FAC240"></stop></linearGradient
+					></defs
+				></svg
+			>
 			<h1>files.community</h1>
 		</a>
-		<a href="https://kernel.fish/" target="_blank" rel="noreferrer noopener" class="project kernel">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 7 7" shape-rendering="crispEdges" width="32" height="32">
-				<path stroke="#92d482" d="M1 1h1M3 1h1M5 1h1M1 2h1M3 2h1M5 2h1M1 3h1M3 3h1M5 3h1M3 4h1M1 5h2M4 5h2"></path>
+		<a
+			href="https://kernel.fish/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project kernel"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 -0.5 7 7"
+				shape-rendering="crispEdges"
+				width="32"
+				height="32"
+			>
+				<path
+					stroke="#92d482"
+					d="M1 1h1M3 1h1M5 1h1M1 2h1M3 2h1M5 2h1M1 3h1M3 3h1M5 3h1M3 4h1M1 5h2M4 5h2"
+				></path>
 			</svg>
 			<h1>kernel.fish</h1>
 		</a>
-		<a href="https://github.com/vexide/evian" target="_blank" rel="noreferrer noopener" class="project wide">
+		<a
+			href="https://github.com/vexide/evian"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project wide"
+		>
 			<h1>evian</h1>
 		</a>
-		<a href="https://betterdiscord.app/" target="_blank" rel="noreferrer noopener" class="project betterdiscord wide tall">
-			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Calque_1" x="0px" y="0px" viewBox="0 0 1940 640" enable-background="new 0 0 1940 640" xml:space="preserve"><g><path fill="#FFFFFF" d="M156.1,273.9H29v142.7l84.6,76.2V354.2h45.2c28.7,0,42.9,13.8,42.9,36v106c0,22.2-13.4,37.1-42.9,37.1H28.6v80.7h127c68.1,0.4,132-33.7,132-111.7v-114C288.1,308.7,224.2,273.9,156.1,273.9L156.1,273.9z"/><path fill="#FFFFFF" d="M821.9,502.3V385.2c0-42.1,75.8-51.7,98.7-9.6l70-28.3c-27.6-60.5-77.7-78.1-119.4-78.1c-68.1,0-135.5,39.4-135.5,115.9v117.1c0,77.3,67.3,115.9,133.9,115.9c42.9,0,94.1-21,122.5-76.2l-75-34.4C898.8,554.8,821.9,543.3,821.9,502.3L821.9,502.3z"/><path fill="#FFFFFF" d="M590.4,401.3c-26.4-5.7-44-15.3-45.2-31.8c1.5-39.4,62.4-40.9,98-3.1l56.3-43.2c-35.2-42.9-75-54.3-115.9-54.3c-62.4,0-122.8,35.2-122.8,101.8c0,64.7,49.7,99.5,104.5,107.9c27.9,3.8,58.9,14.9,58.2,34.1c-2.3,36.4-77.3,34.4-111.4-6.9l-54.3,50.9c31.8,40.9,75,61.6,115.6,61.6c62.4,0,131.6-36,134.3-101.8C711.3,433.5,650.9,412.4,590.4,401.3L590.4,401.3z"/><rect x="334" y="273.9" fill="#FFFFFF" width="85.7" height="339.8"/><path fill="#FFFFFF" d="M1779.3,273.9h-127v142.7l84.6,76.2V354.2h45.2c28.7,0,42.9,13.8,42.9,36v106c0,22.2-13.4,37.1-42.9,37.1h-130.1v80.7h127.4c68.1,0.4,132-33.7,132-111.7v-114C1911.4,308.7,1847.5,273.9,1779.3,273.9L1779.3,273.9z"/><path fill="#FFFFFF" d="M1156,269.3c-70.4,0-140.4,38.3-140.4,116.7V502c0,77.7,70.4,116.7,141.2,116.7c70.4,0,140.4-39,140.4-116.7V386C1297.2,307.9,1226.4,269.3,1156,269.3z M1211.1,502c0,24.5-27.6,37.1-54.7,37.1c-27.6,0-55.1-11.9-55.1-37.1V386c0-24.9,26.8-38.3,53.6-38.3c27.9,0,56.3,11.9,56.3,38.3V502z"/><path fill="#FFFFFF" d="M1538.3,497.4c40.9-13,66.6-48.6,66.6-111.4c-1.9-79.6-56.3-111.7-126.3-111.7h-135.8v339.8h86.9V506.2h15.3l78.8,107.9h107.1L1538.3,497.4z M1480.1,431.9h-50.5v-77.7h50.5C1534.1,354.2,1534.1,431.9,1480.1,431.9z"/></g><g><path fill="#3E82E5" d="M103.3,43.3H28.6v77.1l47.7,43V81.7h27.8c29.6,0,29.6,37.2,0,37.2H85.8v35.6h18.3c29.6,0,29.6,37.2,0,37.2H28.6V230h74.6c38.5,0,68.3-15.4,69.4-53.6c0-17.6-4.8-30.7-13.3-39.8c8.5-9.1,13.3-22.2,13.3-39.8C171.6,58.7,141.8,43.3,103.3,43.3z"/><polygon fill="#3E82E5" points="358.7,43.3 358.7,81.7 406.8,81.7 406.8,230 454.5,230 454.5,81.7 529.8,81.7 529.8,230 577.6,230 577.6,81.7 625.7,81.7 625.7,43.3 "/><polygon fill="#3E82E5" points="197.6,43.3 197.6,230 341.7,230 341.7,191.7 245.4,191.7 245.4,160.5 296.5,160.5 296.5,112.8 245.4,112.8 245.4,81.7 341.7,81.7 341.7,43.3 "/><polygon fill="#3E82E5" points="642.4,43.3 642.4,230 786.4,230 786.4,191.7 690.1,191.7 690.1,160.5 741.3,160.5 741.3,112.8 690.1,112.8 690.1,81.7 786.4,81.7 786.4,43.3 "/><path fill="#3E82E5" d="M918.6,166c22.5-7.1,36.5-26.6,36.5-61.1c-1-43.6-30.8-61.7-69.2-61.7h-74.5V230H859v-59.2h8.4l43.2,59.2h58.7L918.6,166z M886.7,130.2H859V81.7h27.7C916.3,81.7,916.3,130.2,886.7,130.2z"/></g></svg>
+		<a
+			href="https://betterdiscord.app/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project betterdiscord wide tall"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				version="1.1"
+				id="Calque_1"
+				x="0px"
+				y="0px"
+				viewBox="0 0 1940 640"
+				enable-background="new 0 0 1940 640"
+				xml:space="preserve"
+				><g
+					><path
+						fill="#FFFFFF"
+						d="M156.1,273.9H29v142.7l84.6,76.2V354.2h45.2c28.7,0,42.9,13.8,42.9,36v106c0,22.2-13.4,37.1-42.9,37.1H28.6v80.7h127c68.1,0.4,132-33.7,132-111.7v-114C288.1,308.7,224.2,273.9,156.1,273.9L156.1,273.9z"
+					></path><path
+						fill="#FFFFFF"
+						d="M821.9,502.3V385.2c0-42.1,75.8-51.7,98.7-9.6l70-28.3c-27.6-60.5-77.7-78.1-119.4-78.1c-68.1,0-135.5,39.4-135.5,115.9v117.1c0,77.3,67.3,115.9,133.9,115.9c42.9,0,94.1-21,122.5-76.2l-75-34.4C898.8,554.8,821.9,543.3,821.9,502.3L821.9,502.3z"
+					></path><path
+						fill="#FFFFFF"
+						d="M590.4,401.3c-26.4-5.7-44-15.3-45.2-31.8c1.5-39.4,62.4-40.9,98-3.1l56.3-43.2c-35.2-42.9-75-54.3-115.9-54.3c-62.4,0-122.8,35.2-122.8,101.8c0,64.7,49.7,99.5,104.5,107.9c27.9,3.8,58.9,14.9,58.2,34.1c-2.3,36.4-77.3,34.4-111.4-6.9l-54.3,50.9c31.8,40.9,75,61.6,115.6,61.6c62.4,0,131.6-36,134.3-101.8C711.3,433.5,650.9,412.4,590.4,401.3L590.4,401.3z"
+					></path><rect
+						x="334"
+						y="273.9"
+						fill="#FFFFFF"
+						width="85.7"
+						height="339.8"></rect><path
+						fill="#FFFFFF"
+						d="M1779.3,273.9h-127v142.7l84.6,76.2V354.2h45.2c28.7,0,42.9,13.8,42.9,36v106c0,22.2-13.4,37.1-42.9,37.1h-130.1v80.7h127.4c68.1,0.4,132-33.7,132-111.7v-114C1911.4,308.7,1847.5,273.9,1779.3,273.9L1779.3,273.9z"
+					></path><path
+						fill="#FFFFFF"
+						d="M1156,269.3c-70.4,0-140.4,38.3-140.4,116.7V502c0,77.7,70.4,116.7,141.2,116.7c70.4,0,140.4-39,140.4-116.7V386C1297.2,307.9,1226.4,269.3,1156,269.3z M1211.1,502c0,24.5-27.6,37.1-54.7,37.1c-27.6,0-55.1-11.9-55.1-37.1V386c0-24.9,26.8-38.3,53.6-38.3c27.9,0,56.3,11.9,56.3,38.3V502z"
+					></path><path
+						fill="#FFFFFF"
+						d="M1538.3,497.4c40.9-13,66.6-48.6,66.6-111.4c-1.9-79.6-56.3-111.7-126.3-111.7h-135.8v339.8h86.9V506.2h15.3l78.8,107.9h107.1L1538.3,497.4z M1480.1,431.9h-50.5v-77.7h50.5C1534.1,354.2,1534.1,431.9,1480.1,431.9z"
+					></path></g
+				><g
+					><path
+						fill="#3E82E5"
+						d="M103.3,43.3H28.6v77.1l47.7,43V81.7h27.8c29.6,0,29.6,37.2,0,37.2H85.8v35.6h18.3c29.6,0,29.6,37.2,0,37.2H28.6V230h74.6c38.5,0,68.3-15.4,69.4-53.6c0-17.6-4.8-30.7-13.3-39.8c8.5-9.1,13.3-22.2,13.3-39.8C171.6,58.7,141.8,43.3,103.3,43.3z"
+					></path><polygon
+						fill="#3E82E5"
+						points="358.7,43.3 358.7,81.7 406.8,81.7 406.8,230 454.5,230 454.5,81.7 529.8,81.7 529.8,230 577.6,230 577.6,81.7 625.7,81.7 625.7,43.3 "
+					></polygon><polygon
+						fill="#3E82E5"
+						points="197.6,43.3 197.6,230 341.7,230 341.7,191.7 245.4,191.7 245.4,160.5 296.5,160.5 296.5,112.8 245.4,112.8 245.4,81.7 341.7,81.7 341.7,43.3 "
+					></polygon><polygon
+						fill="#3E82E5"
+						points="642.4,43.3 642.4,230 786.4,230 786.4,191.7 690.1,191.7 690.1,160.5 741.3,160.5 741.3,112.8 690.1,112.8 690.1,81.7 786.4,81.7 786.4,43.3 "
+					></polygon><path
+						fill="#3E82E5"
+						d="M918.6,166c22.5-7.1,36.5-26.6,36.5-61.1c-1-43.6-30.8-61.7-69.2-61.7h-74.5V230H859v-59.2h8.4l43.2,59.2h58.7L918.6,166z M886.7,130.2H859V81.7h27.7C916.3,81.7,916.3,130.2,886.7,130.2z"
+					></path></g
+				></svg
+			>
 			<h1>BetterDiscord</h1>
 		</a>
-		<a href="https://github.com/LemLib/robotevents-rs" target="_blank" rel="noreferrer noopener" class="project">
+		<a
+			href="https://github.com/LemLib/robotevents-rs"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project"
+		>
 			<h1>robotevents-rs</h1>
 		</a>
-		<a href="https://modernflyouts-community.github.io/" target="_blank" rel="noreferrer noopener" class="project">
+		<a
+			href="https://modernflyouts-community.github.io/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project"
+		>
 			<h1>ModernFlyouts</h1>
 		</a>
-		<a href="https://github.com/discordstyles" target="_blank" rel="noreferrer noopener" class="project discordstyles">
+		<a
+			href="https://github.com/discordstyles"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="project discordstyles"
+		>
 			<h1>DiscordStyles</h1>
 		</a>
-		<a href="https://github.com/lemlib/robostats" target="_blank" rel="noreferrer noopener" class="robostats project">
+		<a
+			href="https://github.com/lemlib/robostats"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="robostats project"
+		>
 			<h1>RoboStats</h1>
 		</a>
-		<a href="https://taolib.vercel.app/" target="_blank" rel="noreferrer noopener" class="taolib project wide">
+		<a
+			href="https://taolib.vercel.app/"
+			target="_blank"
+			rel="noreferrer noopener"
+			class="taolib project wide"
+		>
 			<h1>taolib</h1>
 		</a>
 	</div>
@@ -76,7 +400,7 @@ import Layout from '../layouts/Layout.astro';
 		justify-content: center;
 		flex-direction: column;
 		position: relative;
-		background: var(--background) url("/noise.png");
+		background: var(--background) url("/ui/noise.png");
 		border: 1px solid var(--border);
 		box-shadow: 4px 4px 0 var(--border);
 		color: var(--foreground);

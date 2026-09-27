@@ -1,6 +1,7 @@
 # build output
 dist/
 dist.zip
+tropical.nekoweb.org.zip
 
 # generated types
 .astro/

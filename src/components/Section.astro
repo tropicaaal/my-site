@@ -7,19 +7,17 @@ const {
 } = Astro.props as Props;
 
 interface Props {
-	tag?: keyof astroHTML.JSX.DefinedIntrinsicElements,
-	title?: string,
-	decorative?: boolean,
-	[key: string]: any,
+	tag?: keyof astroHTML.JSX.DefinedIntrinsicElements;
+	title?: string;
+	decorative?: boolean;
+	[key: string]: any;
 }
 
 const Element = tag;
 ---
 
 <Element class="section" class:list={{ decorative }} {...rest}>
-	{title && (
-		<h1 class="section-title">{title}</h1>
-	)}
+	{title && <h1 class="section-title">{title}</h1>}
 	<div class="section-contents">
 		<slot />
 	</div>
@@ -30,18 +28,18 @@ const Element = tag;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		background: var(--background) url("/noise.png");
+		background: var(--background) url("/ui/noise.png");
 		border: 1px solid var(--border);
 		box-shadow: 4px 4px 0 var(--border);
 		color: var(--foreground);
 		line-height: 1.25;
 		font-size: 15px;
 	}
-	
+
 	.section-contents {
 		padding: 16px;
 	}
-	
+
 	.section.decorative .section-contents {
 		padding: 0;
 	}

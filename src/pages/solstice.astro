@@ -6,9 +6,8 @@ import Clover from "../components/Clover.astro";
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/clover2.png" />
+		<link rel="icon" type="image/png" href="/ui/clover2.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>​</title>
 
@@ -18,7 +17,9 @@ import Clover from "../components/Clover.astro";
 			const tree_img = document.getElementById("tree");
 			const clover_img = document.querySelector(".clover");
 			const shattered_img = document.getElementById("shattered");
-			const music = document.getElementById("music") as HTMLAudioElement | null;
+			const music = document.getElementById(
+				"music",
+			) as HTMLAudioElement | null;
 
 			let music_playing = false;
 
@@ -35,23 +36,25 @@ import Clover from "../components/Clover.astro";
 
 			channel.postMessage("solstice-load");
 
-			channel.addEventListener("message", e => {
+			channel.addEventListener("message", (e) => {
 				if (!shattered) {
 					if (e.data === "load") {
 						channel.postMessage("solstice");
 					} else if (e.data === "solstice-load") {
 						shattered = true;
 						document.title = "□□□□□□□□□";
-						
+
 						clover_img?.remove();
 						tree_img?.remove();
 						music?.pause();
-	
+
 						if (shattered_img) {
-							shattered_img.style.display = "block";	
+							shattered_img.style.display = "block";
 						}
-	
-						throw new Error("Attempted to construct more than one world.");
+
+						throw new Error(
+							"Attempted to construct more than one world.",
+						);
 					} else if (e.data === "synchronized" && !synchronized) {
 						synchronized = true;
 						window.location.href = "steam://launch/420530";
@@ -67,19 +70,28 @@ import Clover from "../components/Clover.astro";
 
 			setInterval(() => {
 				const zoom = window.outerWidth / window.innerWidth;
-				
+
 				const physicalViewportWidth = window.innerWidth * zoom;
 				const physicalViewportHeight = window.innerHeight * zoom;
 
-				const viewportOffsetX = window.outerWidth - physicalViewportWidth;
-				const viewportOffsetY = window.outerHeight - physicalViewportHeight;
-				
+				const viewportOffsetX =
+					window.outerWidth - physicalViewportWidth;
+				const viewportOffsetY =
+					window.outerHeight - physicalViewportHeight;
+
 				const position = {
 					x: window.screenX + viewportOffsetX + physicalViewportWidth,
-					y: window.screenY + viewportOffsetY + physicalViewportHeight,
-				}
+					y:
+						window.screenY +
+						viewportOffsetY +
+						physicalViewportHeight,
+				};
 
-				if (((position.x !== prevPosition.x) || (position.y !== prevPosition.y)) && !shattered) {
+				if (
+					(position.x !== prevPosition.x ||
+						position.y !== prevPosition.y) &&
+					!shattered
+				) {
 					channel.postMessage(position);
 					prevPosition = position;
 				}
@@ -87,7 +99,6 @@ import Clover from "../components/Clover.astro";
 		</script>
 
 		<style>
-
 			html {
 				overflow-y: scroll;
 				scrollbar-color: #000 #000;
@@ -103,7 +114,7 @@ import Clover from "../components/Clover.astro";
 				justify-content: center;
 				align-items: center;
 			}
-			
+
 			#tree {
 				display: block;
 				height: 100%;
@@ -121,7 +132,7 @@ import Clover from "../components/Clover.astro";
 		<img id="tree" alt="Tree" src="/solstice.png" />
 		<img id="shattered" alt="Shattered" src="/shattered.png" />
 		<audio id="music" loop>
-			<source src="/Sonder.ogg" type="audio/ogg">
+			<source src="/audio/Sonder.ogg" type="audio/ogg" />
 		</audio>
 		<Clover />
 	</body>

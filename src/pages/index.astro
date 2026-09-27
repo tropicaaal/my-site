@@ -1,124 +1,233 @@
 ---
 import Section from "../components/Section.astro";
+import Stats from "../components/Stats.svelte";
 import Layout from "../layouts/Layout.astro";
 
 const BUTTONS = [
-	"/88x31/riir.gif",
-	"/88x31/vexidenowanimated.gif",
-	"/88x31/OneShot_button.gif",
-	"https://nekoweb.org/assets/buttons/button6.gif",
-	"/88x31/Rain_World_button.gif",
-	"/88x31/webarchive.gif",
-	"/88x31/ublock-now.png",
-	"/88x31/ds91.png",
-	"/88x31/gbbutton.gif",
-	"/88x31/css.png",
-	"/88x31/thirdimpact.png",
-	"/88x31/ieget-an.gif",
-	"/88x31/susie.png",
-	"/88x31/gimp.png",
-	"/88x31/ezgif.gif",
+	{ src: "/88x31/riir.gif", href: "http://rust-lang.org/" },
+	{ src: "/88x31/vexidenowanimated.gif", href: "https://vexide.dev/" },
+	{
+		src: "/88x31/OneShot_button.gif",
+		href: "https://futurecatgames.itch.io/oneshot",
+	},
+	{
+		src: "https://nekoweb.org/assets/buttons/button6.gif",
+		href: "https://nekoweb.org/",
+	},
+	{ src: "/88x31/Rain_World_button.gif", href: "https://rainworldgame.com/" },
+	{ src: "/88x31/webarchive.gif", href: "https://archive.org/" },
+	{
+		src: "/88x31/ublock-now.png",
+		href: "https://github.com/gorhill/uBlock/",
+	},
+	{ src: "/88x31/ds91.png" },
+	{
+		src: "/88x31/transrights.png",
+		href: "https://youareanangel.love/amianangel",
+	},
+	{
+		src: "/88x31/9button.png",
+		href: "https://9front.org/",
+	},
+
+	{ src: "/88x31/gbbutton.gif", href: "http://glassbeach.band/" },
+	{ src: "/88x31/css.png", href: "https://wiki.csswg.org/ideas/mistakes/" },
+	{ src: "/88x31/ieget-an.gif", href: "https://helium.computer/" },
+	{ src: "/88x31/ralsei.gif", href: "https://deltarune.com/code/" },
+	{ src: "/88x31/yumenikki.gif", href: "https://ynoproject.net/" },
+	{
+		src: "/88x31/uty.png",
+		href: "https://gamejolt.com/games/UndertaleYellow/136925",
+	},
+	{ src: "/88x31/gimp.png", href: "https://www.gimp.org/" },
+	{ src: "/88x31/krita.gif", href: "https://krita.org/" },
+	{ src: "/88x31/ezgif.gif", href: "http://ezgif.com/" },
+	{ src: "/88x31/powered-llvm.gif", href: "https://llvm.org/" },
+	{ src: "/88x31/astro.png", href: "https://astro.build/" },
+	{
+		src: "/88x31/servo.jpeg",
+		href: "https://servo.org/",
+	},
+	{
+		src: "/88x31/sgi.jpg",
+		href: "https://www.youtube.com/watch?v=1sKHc7ubwA4",
+	},
 ];
 ---
 
 <script>
-	let failed = false;
-	const stats = await fetch(
-		`https://nekoweb.org/api/site/info/tropical.nekoweb.org`,
-	)
-		.then((res) => res.json())
-		.catch(() => (failed = true));
-
-	if (!failed) {
-		document.getElementById("created")!.innerHTML =
-			`<em>Created</em>: <time>${new Date(stats.created_at).toLocaleDateString()}</time>`;
-		document.getElementById("updated")!.innerHTML =
-			`<em>Updated</em>: <time>${new Date(stats.updated_at).toLocaleDateString()}</time>`;
-		document.getElementById("views")!.innerHTML =
-			`<em>Views</em>: ${stats.views}`;
-		document.getElementById("followers")!.innerHTML =
-			`<em>Followers</em>: ${stats.followers}`;
-	} else {
-		document
-			.getElementById("stats")!
-			.querySelector(".section-contents")!.innerHTML =
-			"Failed to fetch! 🐕";
-	}
+	// バンダ
+	let titleCursor = false;
+	setInterval(() => {
+		titleCursor = !titleCursor;
+		document.title = titleCursor
+			? "tropical@island ~> _"
+			: "tropical@island ~>";
+	}, 500);
 </script>
 
-<Layout title="tropical's site.">
+<Layout title="tropical@island ~>">
 	<div id="content">
 		<div class="left-column">
-			<Section tag="article" title="01. hello!!!!!">
+			<Section id="hi" tag="article" title="01. hello!!!!!">
 				<h2>welcome to my page!</h2>
-				hihi, I go by tropical online. I like to poke at computer<i>s</i
-				> for fun. My previous site kinda sucked and wasn't very m<i
-					>o</i
-				>bile-friendly, so I made this one instead! If you're <i>l</i
-				>ooking for the old one, it's still on vercel <a
-					href="https://tropix126.vercel.app/"
-					target="_blank"
-					rel="noreferrer noopener">here</a
-				>.
+
+				<p>
+					hello! I go by <u
+						title="the name means nothing in particular, eight-year-old me just thought it sounded cool"
+						>tropical</u
+					> online. I poke at computer<i>s</i> for fun. My previous site
+					kinda sucked and wasn't very m<i>o</i>bile-friendly, so I
+					made this one instead! If you're <i>l</i>ooking for the old
+					one, it's still on vercel <a
+						href="https://tropix126.vercel.app/"
+						target="_blank"
+						rel="noreferrer noopener">here</a
+					>.
+				</p>
 				<strong
 					style="display: block; margin: 8px 0; opacity: 0.5; font-style: italic; font-weight: 600; font-family: var(--font-display); font-size: 16px;"
 				>
 					anyways.....
 					<br />
 				</strong>
-				
-				I'm a hobbyist programmer (now student!) intere<i>s</i>ted in
-				UI/UX design/accessibility, embedded devices, fron<i>t</i>end
-				webdev, hardware hacking, software reverse-engineering, competitive robotics, and
-				music. I like playing <i>i</i>ndie games and rhythm games and
-				practicing piano in my free time.
-				
-				<br />
-				<br />
 
-				You may have met me in a few
-				corners of the internet before. If any of that seems
-				interesting, you can <i>c</i>heck out my <a href="/projects"
-					>projects</a
-				> page for a list of things i've made or help<i>e</i>d with.
-				Enjoy your stay! 🌴
+				<p>
+					I'm a hobbyist programmer (now student!) intere<i>s</i>ted
+					in UI/UX design/accessibility, embedded devices, fron<i>t</i
+					>end webdev, hardware hacking, software reverse-engineering,
+					competitive robotics, and music. I spend my free time
+					playing <i>i</i>ndie games and rhythm games, practicing
+					piano, and staring at <u class="lamplighter">street lamps</u
+					> and telephone poles as all normal people do.
+				</p>
+
+				<p>
+					You may have met me in a few corners of the internet before.
+					If any of this seems interesting, you can <i>c</i>heck out
+					my <a href="/projects">projects</a> page for a list of things
+					i've made or help<i>e</i>d out with. Enjoy your stay! 🌴 🦭
+				</p>
 			</Section>
-			<Section tag="article" title="03. programming">
-				<h2>stuff for nerds</h2>
-				here's a some of the languages and tech I like working with or have
-				some level of experience using for projects and whatnot:
+			<Section
+				id="nerds"
+				tag="article"
+				title="03. waow, everything's computer"
+			>
+				<h2>stuff for nerds :></h2>
+
+				<p>
+					Most of what I do is related to systems programming,
+					compilers, and firmware. I like learning how things work by
+					ripping them apart at low levels. Usually I work in Rust,
+					assembly, or C, but if you need a list:
+				</p>
+
 				<ul>
-					<li>Rust 🦀</li>
-					<li>C/C++</li>
-					<li>ARM32, MIPS Assembly</li>
-					<li>Typical web stack stuff - HTML, (S)CSS, JS, all the frameworks and whatnot, etc...</li>
-					<li>Python</li>
-					<li>Java (boooring)</li>
-					<li>Typst</li>
+					<li>
+						<u
+							title="i maintain a tier-3 target in the rust compiler!"
+							>Rust</u
+						>
+					</li>
+					<li>
+						<u title="its okay.">C</u>/<u
+							title="this programming language makes me violent."
+							>C++</u
+						>
+					</li>
+					<li>ARM32, AArch64, and MIPS assembly language</li>
+					<li>
+						Typical web stuff: HTML, (S)<u
+							title="my first language! (I taught this to myself before learning HTML, don't ask)"
+							>CSS</u
+						>, JS, TS, <u
+							title="(p)react, svelte, solid, vue, astro"
+							>all the frameworks</u
+						>, etc...
+					</li>
+					<li>
+						Python, <u
+							title="the two valid uses of Java are minecraft mods and native android dev and absolutely nothing else."
+							>Java</u
+						>, some other boring ones not worthy of mention...
+					</li>
 				</ul>
-				...and a non-exhaustive list of the things I hope to learn at some
-				point:
-				<ul>
-					<li>Kotlin</li>
-					<li>Swift</li>
-					<li>x86 Assembly</li>
-				</ul>
+
+				<h2>this site</h2>
+
+				<p>
+					I'm also into webdev (if you couldn't tell from this site)
+					and UI/UX design, though i've kept my distance from that
+					space due of the sheer volume of slop that JavaScript devs
+					put out these days. This site is built with <a
+						href="https://astro.build/"
+						target="_blank"
+						rel="noreferrer noopener">Astro</a
+					>!
+				</p>
+
+				<h2>artificial intelligence</h2>
+
+				<p>
+					<img
+						style="float: right; margin-left: 12px;"
+						width="48"
+						height="64"
+						alt="Lamplighter lighting a lamp"
+						id="lamplighter"
+						src="/blorbo/lamplighter.webp"
+					/>
+					not against it conceptually, but I have a strong distaste for
+					both the <u title="nuke san francisco"
+						>industry pushing it</u
+					> and people who become <u
+						title="please throw rocks at your local tpot techbro."
+						>totally reliant on it</u
+					>. everything is a little more <u
+						title="read: effort and care. something lacking both is not worth engaging with"
+						>devoid of soul</u
+					> since LLMs and <u
+						title="these are particularly fucking indefensible."
+						>diffusion models</u
+					> became mainstream, and that's sad to see :{"<"}
+				</p>
 			</Section>
 		</div>
 		<aside class="right-column">
 			<Section decorative id="buttons">
-				<marquee aria-hidden="true">
+				<div class="marquee" aria-hidden="true">
 					{
-						BUTTONS.map((url) => (
-							<img
-								loading="lazy"
-								src={url}
-								width="88"
-								height="31"
-							/>
+						Array.from({ length: 2 }, (_) => (
+							<div class="marquee-items">
+								{BUTTONS.map(({ src, href }) =>
+									href ? (
+										<a
+											href={href}
+											target="_blank"
+											rel="noreferrer noopener"
+											tabindex="-1"
+										>
+											<img
+												loading="lazy"
+												src={src}
+												width="88"
+												height="31"
+											/>
+										</a>
+									) : (
+										<img
+											loading="lazy"
+											src={src}
+											width="88"
+											height="31"
+										/>
+									),
+								)}
+							</div>
 						))
 					}
-				</marquee>
+				</div>
 			</Section>
 			<Section decorative>
 				<img
@@ -177,14 +286,19 @@ const BUTTONS = [
 						<a
 							href="https://www.youtube.com/channel/UCYZDyX9Bk4CfroddX9-t9VA"
 							target="_blank"
-							rel="noreferrer noopener">YouTube - @Tropical126</a
+							rel="noreferrer noopener">YouTube - @tropicaal</a
 						>
 					</li>
 				</ul>
 			</Section>
 			<Section decorative id="music">
-				<a class="sepia" href="https://www.youtube.com/watch?v=qCAx4ynlIUM" target="_blank" rel="noreferrer noopener">
-					<img alt="sepia" src="/sepia.gif" />
+				<a
+					class="sepia"
+					href="https://www.youtube.com/watch?v=qCAx4ynlIUM"
+					target="_blank"
+					rel="noreferrer noopener"
+				>
+					<img alt="sepia" src="/blorbo/sepia.gif" />
 				</a>
 				<div class="titlebar">
 					♪ take care of yourself
@@ -194,21 +308,16 @@ const BUTTONS = [
 						<button tabindex="-1" class="close"></button>
 					</div>
 				</div>
-				<audio controls loop src="/moon.m4a"></audio>
+				<audio controls loop src="/audio/moon.m4a"></audio>
 			</Section>
 			<Section id="stats" title="04. nekoweb stats (requires JS)">
-				<div id="created">
-					<em>Created: </em> Loading...
-				</div>
-				<div id="updated">
-					<em>Updated: </em> Loading...
-				</div>
-				<div id="views">
-					<em>Views: </em> Loading...
-				</div>
-				<div id="followers">
-					<em>Followers: </em> Loading...
-				</div>
+				<Stats site="tropical.nekoweb.org" client:load />
+				<a
+					href="https://nekoweb.org/follow/tropical.nekoweb.org"
+					target="_blank"
+					rel="noreferrer noopener"
+					class="button">Follow me!!</a
+				>
 			</Section>
 			<Section id="spinning-cat" decorative>
 				<a
@@ -220,7 +329,7 @@ const BUTTONS = [
 					<img
 						width="50"
 						height="33.5"
-						src="/cat-spinning.gif"
+						src="/blorbo/maxwell.gif"
 						alt="cat spinning"
 					/>
 				</a>
@@ -228,186 +337,277 @@ const BUTTONS = [
 			</Section>
 		</aside>
 	</div>
-</Layout>
 
-<style>
-	.left-column {
-		display: flex;
-		flex-direction: column;
-		flex: 1 1 auto;
-		gap: 16px;
-	}
-
-	aside {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-		flex: 0 0 auto;
-		width: 300px;
-	}
-
-	section:last-child {
-		margin-bottom: 0;
-	}
-
-	section.decorative {
-		padding: 0;
-	}
-
-	.pipes {
-		display: block;
-		width: 100%;
-		height: auto;
-		max-height: 250px;
-		object-fit: cover;
-	}
-
-	#music {
-		display: flex;
-		flex-direction: column;
-		background: silver;
-		border: none;
-		box-shadow:
-			inset -1px -1px #0a0a0a,
-			inset 1px 1px #dfdfdf,
-			inset -2px -2px grey,
-			inset 2px 2px #fff,
-			4px 4px 0 var(--border);
-		padding: 2px;
-	}
-
-	#music audio {
-		width: 100%;
-		padding: 8px;
-	}
-
-	#buttons {
-		padding: 4px 0;
-	}
-
-	#socials ul {
-		margin: 0;
-	}
-
-	#stats :global(.section-contents) {
-		display: flex;
-		flex-direction: column;
-	}
-
-	#spinning-cat {
-		flex: 1 1 auto;
-		overflow: hidden;
-	}
-
-	#spinning-cat :global(.section-contents) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		height: 100%;
-		z-index: 1;
-	}
-
-	#spinning-cat img {
-		margin: 8px 0;
-		position: relative;
-		z-index: 1;
-	}
-
-	#spinning-cat span {
-		user-select: none;
-		font-size: 64px;
-		font-family: var(--font-display);
-		font-style: italic;
-		opacity: 0.5;
-		position: absolute;
-	}
-
-	.sepia {
-		position: absolute;
-		right: 0px;
-		top: -50px;
-	}
-
-	.titlebar {
-		display: flex;
-		justify-content: space-between;
-		padding: 3px 2px 3px 3px;
-		background: linear-gradient(
-			90deg,
-			var(--gradient-stop-2),
-			var(--gradient-stop-1)
-		);
-		color: #000;
-		font-family: var(--font-small);
-		font-size: 12px;
-		letter-spacing: 3px;
-	}
-
-	.titlebar .controls {
-		display: flex;
-	}
-
-	.titlebar .controls button {
-		display: block;
-		min-height: 14px;
-		min-width: 16px;
-		padding: 0;
-		border: none;
-		border-radius: 0;
-		background-color: silver;
-		box-shadow:
-			inset -1px -1px #0a0a0a,
-			inset 1px 1px #fff,
-			inset -2px -2px grey,
-			inset 2px 2px #dfdfdf;
-	}
-
-	button.minimize {
-		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
-		background-position: bottom 4px left 4px;
-		background-repeat: no-repeat;
-	}
-
-	button.maximize {
-		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
-		background-position: top 3px left 3px;
-		background-repeat: no-repeat;
-	}
-
-	button.close {
-		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
-		background-position: top 4px left 4px;
-		background-repeat: no-repeat;
-		margin-left: 2px;
-	}
-
-	marquee {
-		height: 31px;
-		display: block;
-	}
-
-	marquee img {
-		/* As god intended :p */
-		width: 88px;
-		height: 31px;
-		margin-right: 8px;
-		image-rendering: pixelated;
-	}
-
-	#content {
-		display: flex;
-		gap: 16px;
-		width: 100%;
-		margin-top: 16px;
-	}
-
-	@media only screen and (max-width: 728px) {
-		#content {
+	<style>
+		.left-column {
+			display: flex;
 			flex-direction: column;
+			flex: 1 1 auto;
+			gap: 16px;
 		}
+
 		aside {
-			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			flex: 0 0 auto;
+			width: 300px;
 		}
-	}
-</style>
+
+		section:last-child {
+			margin-bottom: 0;
+		}
+
+		section.decorative {
+			padding: 0;
+		}
+
+		.pipes {
+			display: block;
+			width: 100%;
+			height: auto;
+			max-height: 250px;
+			object-fit: cover;
+		}
+
+		#music {
+			display: flex;
+			flex-direction: column;
+			background: silver;
+			border: none;
+			box-shadow:
+				inset -1px -1px #0a0a0a,
+				inset 1px 1px #dfdfdf,
+				inset -2px -2px grey,
+				inset 2px 2px #fff,
+				4px 4px 0 var(--border);
+			padding: 2px;
+		}
+
+		#music audio {
+			width: 100%;
+			padding: 8px;
+		}
+
+		#buttons {
+			contain: paint;
+			overflow: hidden;
+			padding: 4px 0;
+		}
+
+		#socials ul {
+			margin: 0;
+		}
+
+		#stats :global(.section-contents) {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		#spinning-cat {
+			flex: 1 1 auto;
+			overflow: hidden;
+		}
+
+		#spinning-cat :global(.section-contents) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			height: 100%;
+			z-index: 1;
+		}
+
+		#spinning-cat img {
+			margin: 8px 0;
+			position: relative;
+			z-index: 1;
+		}
+
+		#spinning-cat span {
+			user-select: none;
+			font-size: 64px;
+			font-family: var(--font-display);
+			font-style: italic;
+			opacity: 0.5;
+			position: absolute;
+		}
+
+		.sepia {
+			position: absolute;
+			right: 0px;
+			top: -50px;
+		}
+
+		.titlebar {
+			display: flex;
+			justify-content: space-between;
+			padding: 3px 2px 3px 3px;
+			background: linear-gradient(
+				90deg,
+				var(--gradient-stop-2),
+				var(--gradient-stop-1)
+			);
+			color: #000;
+			font-family: var(--font-small);
+			font-size: 12px;
+			letter-spacing: 3px;
+		}
+
+		.titlebar .controls {
+			display: flex;
+		}
+
+		.titlebar .controls button {
+			display: block;
+			min-height: 14px;
+			min-width: 16px;
+			padding: 0;
+			border: none;
+			border-radius: 0;
+			background-color: silver;
+			box-shadow:
+				inset -1px -1px #0a0a0a,
+				inset 1px 1px #fff,
+				inset -2px -2px grey,
+				inset 2px 2px #dfdfdf;
+		}
+
+		button.minimize {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
+			background-position: bottom 4px left 4px;
+			background-repeat: no-repeat;
+		}
+
+		button.maximize {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
+			background-position: top 3px left 3px;
+			background-repeat: no-repeat;
+		}
+
+		button.close {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+			background-position: top 4px left 4px;
+			background-repeat: no-repeat;
+			margin-left: 2px;
+		}
+
+		@keyframes marquee {
+			from {
+				transform: translate3d(0, 0, 0);
+			}
+			to {
+				transform: translate3d(-50%, 0, 0);
+			}
+		}
+
+		.marquee {
+			--gap: 4px;
+			display: flex;
+			flex-shrink: 0;
+			min-width: 100%;
+			gap: var(--gap);
+			animation: marquee 30s linear infinite;
+			width: fit-content;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.marquee {
+				animation: none;
+				width: auto;
+				overflow: auto;
+			}
+
+			.marquee .marquee-items:nth-child(2) {
+				display: none;
+			}
+		}
+
+		.marquee-items {
+			display: flex;
+			flex-shrink: 0;
+			gap: var(--gap);
+			white-space: nowrap;
+		}
+
+		.marquee:hover {
+			animation-play-state: paused;
+		}
+
+		.marquee a {
+			display: contents;
+		}
+
+		.marquee img {
+			/* As god intended :p */
+			width: 88px;
+			height: 31px;
+			image-rendering: pixelated;
+		}
+
+		#content {
+			display: flex;
+			gap: 16px;
+			width: 100%;
+			margin-top: 16px;
+		}
+
+		@media only screen and (max-width: 728px) {
+			#content {
+				flex-direction: column;
+			}
+			aside {
+				width: 100%;
+			}
+		}
+
+		:global(main > header::before) {
+			content: "";
+			width: 1px;
+			height: 1px;
+			bottom: 90px;
+			right: 26px;
+			position: absolute;
+			border-radius: 6666px;
+			box-shadow: none;
+			pointer-events: none;
+			z-index: 1000;
+			mix-blend-mode: color-dodge;
+			transition: box-shadow 6s linear;
+		}
+
+		:global(:has(.lamplighter:hover) main > header::before) {
+			background: white;
+			box-shadow:
+				0 0 16px 16px white,
+				0 0 64px 32px white,
+				0 0 666px 666px rgb(122, 129, 84);
+		}
+
+		.button {
+			cursor: default;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-align: center;
+			display: inline-block;
+			border-radius: 0;
+			color: var(--background);
+			font: inherit;
+			padding: 4px 8px;
+			border: 2px outset var(--border);
+			background-clip: border-box;
+			background: var(--border);
+			font-size: 12px;
+		}
+
+		.button:active {
+			border-style: inset;
+		}
+
+		.button:focus {
+			outline: 1px dotted;
+			outline-offset: -6px;
+		}
+	</style>
+</Layout>

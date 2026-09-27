@@ -19,7 +19,7 @@ interface Props {
 		<img
 			class="nhmf"
 			width="923"
-			height="200"
+			height="220"
 			alt="an important sunset"
 			src="/nhmf.png"
 		/>
@@ -27,7 +27,7 @@ interface Props {
 		<a class="lightpost-container" href="/july/">
 			<img
 				class="light"
-				src="/lightsource.png"
+				src="/ui/lightsource.png"
 				width="139"
 				height="175"
 				alt="light source"
@@ -37,7 +37,7 @@ interface Props {
 				width="13"
 				height="65"
 				alt="Lightpost"
-				src="/lightpost.png"
+				src="/ui/lightpost.png"
 			/>
 		</a>
 	</div>
@@ -70,7 +70,8 @@ interface Props {
 		padding-right: 4px;
 		background: var(--border);
 		font-family: var(--font-small);
-		color: #000;
+		color: var(--background);
+		z-index: 1;
 	}
 
 	.skip-to-content::after {
@@ -84,14 +85,26 @@ interface Props {
 		border-right: 18px solid transparent;
 		border-bottom: 18px solid var(--border);
 		border-top: 18px solid transparent;
+		z-index: -1;
+	}
+
+	.skip-to-content:focus {
+		outline: 1px dotted var(--link);
+		outline-offset: 2px;
 	}
 
 	.header-image {
-		background: var(--background) url(/noise.png);
+		background: var(--background) url(/ui/noise.png);
 		image-rendering: pixelated;
 		position: relative;
-		height: 200px;
+		height: 220px;
 		overflow: hidden;
+	}
+
+	@media only screen and (max-width: 1024px) {
+		.header-image {
+			height: 200px;
+		}
 	}
 
 	.nhmf {
@@ -115,7 +128,7 @@ interface Props {
 		font-family: var(--font-display);
 		background: var(--gradient);
 		box-shadow: 4px 4px 0 var(--border);
-		color: #000;
+		color: var(--background);
 		margin: 0;
 		padding: 8px 16px;
 		font-size: 16px;
@@ -123,14 +136,14 @@ interface Props {
 
 	nav {
 		border-top: 1px solid var(--border);
-		background: var(--background) url("/noise.png");
+		background: var(--background) url("/ui/noise.png");
 	}
 
 	nav a {
 		display: inline-block;
 		padding: 12px 24px;
 		font-family: var(--font-small);
-		border-right: 1px solid var(--border);
+		border-right: 1px dotted var(--border);
 		color: var(--foreground);
 		font-size: 12px;
 		text-transform: uppercase;
@@ -147,23 +160,22 @@ interface Props {
 		outline-offset: -5px;
 	}
 
+	.lightpost-container {
+		position: absolute;
+		right: 20px;
+		bottom: 0;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+	}
 
-.lightpost-container {
-    position: absolute;
-    right: 20px;
-    bottom: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: center
-}
-
-.lightpost-container .light {
-    position: absolute;
-    margin-left: -3px;
-    top: -32px;
-    width: 139px;
-    height: 175px;
-    border-radius: 0;
-    z-index: -1
-}
+	.lightpost-container .light {
+		position: absolute;
+		margin-left: -3px;
+		top: -32px;
+		width: 139px;
+		height: 175px;
+		border-radius: 0;
+		z-index: -1;
+	}
 </style>
