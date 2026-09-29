@@ -28,7 +28,7 @@
         } catch {}
     }
 
-    let { site, viewsDigits = 8, followersDigits = 8 } = $props();
+    let { site } = $props();
 
     let loading = $state(true);
     let failed = $state(false);
@@ -79,24 +79,20 @@
                 <time>{new Date(stats.updated_at).toLocaleDateString()}</time>
             {/if}
         </div>
-        <div class="stat-row">
+        <div class="stat-row" style="height: 20px;">
             <em>Views:</em>
             {#if loading}
                 Loading...
             {:else}
-                <Nixies value={stats.views} digits={viewsDigits} pad="left" />
+                <Nixies value={stats.views} digits={8} pad="left" />
             {/if}
         </div>
-        <div class="stat-row">
+        <div class="stat-row" style="height: 20px;">
             <em>Followers:</em>
             {#if loading}
                 Loading...
             {:else}
-                <Nixies
-                    value={stats.followers}
-                    digits={followersDigits}
-                    pad="left"
-                />
+                <Nixies value={stats.followers} digits={8} pad="left" />
             {/if}
         </div>
     {/if}
@@ -112,6 +108,7 @@
     }
 
     .stat-row em {
+        vertical-align: middle;
         text-align: left;
         width: 1px;
         padding-right: 8px;

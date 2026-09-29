@@ -88,8 +88,6 @@
             class="tube"
             src={`/nixie/${tube.name}.png`}
             alt={tube.alt}
-            loading="eager"
-            decoding="sync"
             width={6 * scale}
             height={10 * scale}
         />
